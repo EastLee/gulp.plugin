@@ -1,0 +1,1 @@
+function test(){console.info(1)}alert("index");
