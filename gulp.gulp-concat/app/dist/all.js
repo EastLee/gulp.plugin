@@ -1,0 +1,2 @@
+alert('index');
+||alert('all');
