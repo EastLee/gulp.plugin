@@ -1,0 +1,105 @@
+@function torem($px){
+  @return $px /20px * 1rem;
+}
+#header{
+  position: relative
+}
+.hands{
+  width: torem(320px);
+}
+.logo1{
+  width: torem(111px);
+  position: absolute;
+  left: torem(15px);
+  top: torem(10px);
+}
+.tongxing{
+  display: block;
+  background-size: torem(241px);
+  width: torem(241px);
+  position: absolute;
+  top: torem(80px);
+  left: torem(38px);
+}
+.h_text1{
+  width: torem(320px);
+  text-align: center;
+  display: block;
+  font-size:torem(9px);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: torem(121px);
+}
+.joinlm{
+  display: block;
+  background: #FF6F6F;
+  border-radius: torem(4px);
+  font-size: torem(9px);
+  line-height: torem(30px);
+  color: #FFFFFF;
+  width: torem(110px);
+  height: torem(30px);
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  margin-left: torem(-55px);
+  bottom: torem(30px);
+}
+#content{
+  width: 100%;
+  background-color: #fff;
+  padding-top: torem(25px);
+}
+.con_tit{
+  display: block;
+  font-size: torem(14px);
+  color: #4A4A4A;
+  width: inherit;
+  text-align: center;
+}
+.lists{
+  padding: torem(25px) torem(30px) torem(0px) torem(30px);
+}
+.lists li{
+  float: left;
+  width: torem(125px);
+  margin-bottom: torem(50px);
+}
+.lists li:nth-child(2n+1){
+  margin-right: torem(10px);
+}
+.lists li img{
+  width: torem(75px);
+  margin-left: torem(25px);
+}
+.con_text1,.con_text2{
+  display: block;
+  width: inherit;
+  text-align: center;
+}
+.lists .con_text1{
+  font-size: torem(14px);
+  color: #4A4A4A;
+  line-height: 2;
+}
+.lists .con_text2{
+  font-size: torem(8px);
+  color: #9B9B9B;
+}
+#footer{
+  background: #3B404E;
+  width: 100%;
+  height: torem(59px);
+}
+.logo58{
+  width: torem(42px);
+  margin: torem(16px) 0 torem(6px) torem(140px);
+}
+.footer_text{
+  display: block;
+  font-size: torem(7px);
+  color: #6C7088;
+  width: inherit;
+  text-align: center;
+}
