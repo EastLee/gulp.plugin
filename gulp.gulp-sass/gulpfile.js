@@ -12,6 +12,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./app/dist'));
 });
 
-gulp.task('de', function() {
+gulp.task('default', function() {
     gulp.watch('./app/src/*.scss', ['sass']);
 });
