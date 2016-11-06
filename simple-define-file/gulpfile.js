@@ -22,7 +22,8 @@ var dirPaths = {
     devPath: './src',
     proPath: './dist',
     zip: {
-        path: './zip',
+        cprPath:'./dist/**/*.*',
+        outpath: './zip',
         name: 'dist.zip'
     },
     html: './html',
@@ -112,7 +113,7 @@ gulp.task('g-js', function() {
 
 //删除生成文件
 gulp.task('g-del', function() {
-    del([proPath]).then(function() {
+    del([dirPaths.proPath]).then(function() {
         console.info('delete success!');
     })
 });
@@ -147,7 +148,7 @@ gulp.task('g-watch', function() {
 gulp.task('default', ['g-connect', 'g-watch', 'g-openbrowser']);
 
 gulp.task('g-zip', function() {
-    return gulp.src(dirPaths.proPath + '/**/*.*')
+    return gulp.src(dirPaths.zip.cprPath)
         .pipe(zip(dirPaths.zip.name))
         .pipe(gulp.dest(dirPaths.zip.path));
 });
