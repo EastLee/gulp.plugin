@@ -1,0 +1,12 @@
+@function torem($px) {
+     @return $px /20px * 1rem;
+}
+#header {
+    position: relative;
+    flex: 1;
+}
+.hands {
+    width: torem(320px);
+    background-image: url("../img/flux0.png");
+    height: torem(320px);
+}

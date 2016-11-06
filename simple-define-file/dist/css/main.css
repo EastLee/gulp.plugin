@@ -1,0 +1,15 @@
+#header {
+	position: relative;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+.hands {
+	width: 16rem;
+	background-image: url("../img/spritesheet.png");
+	background-position: -0px -0px;
+	height: 16rem;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNJLG1CQUFtQjtFQUNuQixvQkFBUTtNQUFSLFlBQVE7VUFBUixRQUFRLEVBQ1g7O0FBQ0Q7RUFDSSxhQVBZO0VBUVosMENBQXFCO0VBQ3JCLGNBVFksRUFVZiIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBmdW5jdGlvbiB0b3JlbSgkcHgpIHtcbiAgICAgQHJldHVybiAkcHggLzIwcHggKiAxcmVtO1xufVxuI2hlYWRlciB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGZsZXg6IDE7XG59XG4uaGFuZHMge1xuICAgIHdpZHRoOiB0b3JlbSgzMjBweCk7XG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi4vaW1nL2ZsdXgwLnBuZ1wiKTtcbiAgICBoZWlnaHQ6IHRvcmVtKDMyMHB4KTtcbn1cbiJdfQ== */
