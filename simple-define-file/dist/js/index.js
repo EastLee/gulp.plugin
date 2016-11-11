@@ -1,1 +1,0 @@
-function test(){console.info(111)}alert(26),test();

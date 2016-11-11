@@ -8,7 +8,7 @@ const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
-const spriter = require('gulp-css-spriter');
+const spriter = require('gulp-cross-spriter');
 const jshint = require('gulp-jshint');
 const stylish = require('jshint-stylish');
 const del = require('del');
@@ -22,7 +22,7 @@ var dirPaths = {
     devPath: './src',
     proPath: './dist',
     zip: {
-        cprPath:'./dist/**/*.*',
+        cprPath: './dist/**/*.*',
         outpath: './zip',
         name: 'dist.zip'
     },
@@ -53,7 +53,7 @@ var serverConfig = {
 };
 
 var uploadConfig = {
-    proPath:'',
+    proPath: '',
     host: 'website.com',
     user: 'johndoe',
     pass: '1234',
@@ -94,10 +94,15 @@ gulp.task('g-image', function() {
 gulp.task('g-style', ['g-css', 'g-image'], function() {
     gulp.src(dirPaths.css.dist + '/**/*.css')
         .pipe(spriter({
-            'spriteSheet': dirPaths.img.dist + '/spritesheet.png',
-            'pathToSpriteSheetFromCSS': '../img/spritesheet.png'
+            'spriteSheet': dirPaths.img.dist,
+            'pathToSpriteSheetFromCSS': '../img/png',
+            'spritesmithOptions': {
+                algorithm: "top-down", //'alt-diagonal'
+                padding: 50
+            },
+            'cssPath': dirPaths.css.dist
         }))
-        .pipe(gulp.dest(dirPaths.css.dist));
+        // .pipe(gulp.dest('./dist/test'));
 });
 
 

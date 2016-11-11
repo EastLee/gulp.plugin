@@ -1,0 +1,9 @@
+.t{
+    background: url('../img/github.png?sprite=sprite1');
+}
+.b{
+    background: url('../img/fork.png?sprite=sprite2');
+}
+.c{
+    background: url('../img/twitter.png?sprite=sprite2');
+}

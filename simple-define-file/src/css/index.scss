@@ -9,11 +9,11 @@
     width: 1000px;
     height: 1000px;
     // background: red;
-    background-image: url("../img/flux0.png");
+    background-image: url("../img/flux0.png?sprite=index");
 }
 .hands {
     width: torem(320px);
-    background-image: url("../img/flux0.png");
+    background-image: url("../img/flux0.png?sprite=index");
     height: torem(320px);
 }
 .logo1 {
@@ -30,7 +30,7 @@
     position: absolute;
     top: torem(80px);
     left: torem(38px);
-    background: url("../img/flux00.png");
+    background: url("../img/flux00.png")
 }
 .h_text1 {
     width: torem(320px);
