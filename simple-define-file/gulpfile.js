@@ -100,7 +100,15 @@ gulp.task('g-style', ['g-css', 'g-image'], function() {
                 algorithm: "top-down", //'alt-diagonal'
                 padding: 50
             },
-            'cssPath': dirPaths.css.dist
+            'cssPath': dirPaths.css.dist,
+            'absolutePathToSpriteSheetFromCSS':{
+                sKey:true,
+                absolutePath:'http://img.google.com/static/image/',
+                specialPath:{
+                    index:'http://img.google.com/static/index/',
+                    main:'http://img.google.com/static/main/'
+                }
+            }
         }))
         // .pipe(gulp.dest('./dist/test'));
 });
