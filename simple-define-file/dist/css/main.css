@@ -7,13 +7,13 @@
 
 .hands {
 	width: 16rem;
-	background-image: url("../img/png/main.png");
+	background-image: url("http://img.google.com/static/main/main.png");
 	background-position: -0px -200px;
 	height: 16rem;
 }
 
 .con {
-	background-image: url("../img/png/main.png");
+	background-image: url("http://img.google.com/static/main/main.png");
 	background-position: -0px -0px;
 }
 

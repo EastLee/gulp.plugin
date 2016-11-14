@@ -44,6 +44,24 @@ var dirPaths = {
     tool: './tool'
 };
 
+var spriteConfig = {
+    'spriteSheet': dirPaths.img.dist,
+    'pathToSpriteSheetFromCSS': '../img/png',
+    'spritesmithOptions': {
+        algorithm: "top-down", //'alt-diagonal'
+        padding: 50
+    },
+    'cssPath': dirPaths.css.dist,
+    'absolutePathToSpriteSheetFromCSS': {
+        sKey: true,
+        absolutePath: 'http://img.google.com/static/image/',
+        specialPath: {
+            index: 'http://img.google.com/static/index/',
+            main: 'http://img.google.com/static/main/'
+        }
+    }
+};
+
 var serverConfig = {
     root: './', //设置根目录
     livereload: true, //启动实施监控
@@ -73,13 +91,13 @@ gulp.task('g-init', function() {
 //处理css文件
 gulp.task('g-css', function() {
     return gulp.src(dirPaths.css.src + '/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            // outputStyle: 'compressed'
+        .pipe(sourcemaps.init())//生成map
+        .pipe(sass({//编译sass文件
+            outputStyle: 'compressed'//压缩
         }).on('error', sass.logError))
-        .pipe(autoprefixer())
+        .pipe(autoprefixer())//添加前缀
         .pipe(sourcemaps.write())
-        .pipe(rename({}))
+        .pipe(rename({}))//重命名
         .pipe(gulp.dest(dirPaths.css.dist));
 });
 
@@ -93,24 +111,7 @@ gulp.task('g-image', function() {
 //处理css和img
 gulp.task('g-style', ['g-css', 'g-image'], function() {
     gulp.src(dirPaths.css.dist + '/**/*.css')
-        .pipe(spriter({
-            'spriteSheet': dirPaths.img.dist,
-            'pathToSpriteSheetFromCSS': '../img/png',
-            'spritesmithOptions': {
-                algorithm: "top-down", //'alt-diagonal'
-                padding: 50
-            },
-            'cssPath': dirPaths.css.dist,
-            'absolutePathToSpriteSheetFromCSS':{
-                sKey:true,
-                absolutePath:'http://img.google.com/static/image/',
-                specialPath:{
-                    index:'http://img.google.com/static/index/',
-                    main:'http://img.google.com/static/main/'
-                }
-            }
-        }))
-        // .pipe(gulp.dest('./dist/test'));
+        .pipe(spriter(spriteConfig))
 });
 
 
