@@ -17,7 +17,8 @@ const connect = require('gulp-connect');
 const opn = require('opn');
 const zip = require('gulp-zip');
 const sftp = require('gulp-sftp');
-
+const Rest = require('connect-rest');
+const mock = require('./mock');
 var dirPaths = {
     devPath: './src',
     proPath: './dist',
@@ -137,12 +138,29 @@ gulp.task('g-openbrowser', function() {
 });
 
 gulp.task('g-connect', function() {
+    var options = {
+        context: '/',
+        logger: {
+            file: 'mochaTest.log',
+            level: 'debug'
+        },
+        // apiKeys: [ '849b7648-14b8-4154-9ef2-8d1dc4c2b7e9' ],
+    }
+    var rest = Rest.create(options);
     connect.server({
         root: serverConfig.root, //设置根目录
         livereload: serverConfig.livereload, //启动实施监控
         port: serverConfig.port, //设置端口
-        name: serverConfig.name //设置服务器名字
+        name: serverConfig.name, //设置服务器名字
+        middleware: function(connect, opt) {
+            return [rest.processRequest()]
+        }
     });
+    //相对启动的服务器，建立接口请求，模拟后端
+    // mock(rest);
+    // rest.get('foo', function(req) {
+    //     console.info(req.url);
+    // });
 });
 
 gulp.task('g-reload', function() {
